@@ -5,7 +5,7 @@ BEGIN;
 
 CREATE TABLE IF NOT EXISTS public.autobus
 (
-    id_autobus integer NOT NULL DEFAULT nextval('autobus_id_autobus_seq'::regclass),
+    id_autobus serial,
     matricula character(6) COLLATE pg_catalog."default" NOT NULL,
     CONSTRAINT autobus_pkey PRIMARY KEY (id_autobus)
 );
@@ -19,7 +19,7 @@ CREATE TABLE IF NOT EXISTS public.autobus_conductor
 
 CREATE TABLE IF NOT EXISTS public.conductor
 (
-    id_conductor integer NOT NULL DEFAULT nextval('conductor_id_conductor_seq'::regclass),
+    id_conductor serial,
     nombre character(25) COLLATE pg_catalog."default" NOT NULL,
     edad integer,
     CONSTRAINT conductor_pkey PRIMARY KEY (id_conductor)
@@ -27,7 +27,7 @@ CREATE TABLE IF NOT EXISTS public.conductor
 
 CREATE TABLE IF NOT EXISTS public.lugar
 (
-    id_lugar integer NOT NULL DEFAULT nextval('lugar_id_lugar_seq'::regclass),
+    id_lugar serial,
     nombre character(25) COLLATE pg_catalog."default" NOT NULL,
     id_autobus integer NOT NULL,
     CONSTRAINT lugar_pkey PRIMARY KEY (id_lugar)
@@ -38,7 +38,7 @@ CREATE TABLE IF NOT EXISTS public.recorren_fecha
     fecha date NOT NULL,
     id_autobus integer NOT NULL,
     id_lugar integer NOT NULL,
-    id_visitas integer NOT NULL DEFAULT nextval('recorren_fecha_id_visitas_seq'::regclass),
+    id_visitas serial,
     CONSTRAINT recorren_fecha_pkey PRIMARY KEY (id_visitas)
 );
 
