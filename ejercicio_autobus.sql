@@ -7,7 +7,6 @@ CREATE TABLE IF NOT EXISTS public.autobus
 (
     id_autobus integer NOT NULL DEFAULT nextval('autobus_id_autobus_seq'::regclass),
     matricula character(6) COLLATE pg_catalog."default" NOT NULL,
-    lugares integer[] NOT NULL,
     CONSTRAINT autobus_pkey PRIMARY KEY (id_autobus)
 );
 
