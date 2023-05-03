@@ -6,8 +6,8 @@ BEGIN;
 CREATE TABLE IF NOT EXISTS public.libro
 (
     "ISBN" integer NOT NULL,
-    titulo character(1) COLLATE pg_catalog."default" NOT NULL,
-    autor character(1) COLLATE pg_catalog."default" NOT NULL,
+    titulo character(25) COLLATE pg_catalog."default" NOT NULL,
+    autor character(25) COLLATE pg_catalog."default" NOT NULL,
     n_ejemplares integer NOT NULL,
     id_tema integer NOT NULL,
     CONSTRAINT libro_pkey PRIMARY KEY ("ISBN")
